@@ -1,0 +1,50 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esate Essentials</title>
+  {%include 'ess_app/common/commoncss.html'%}
+  <body>
+    {%include 'ess_app/common/navbar.html'%}
+    
+    <div class="card text-center" style="margin: 15%;">
+            <div class="card-header">
+              {{scheme_data.scheme_topic}}
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{scheme_data.scheme_contents}}</p>
+            </div>
+            <div class="card-footer text-muted">
+              {{scheme_data.date}}
+            </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {%include 'ess_app/common/footer.html'%}
+  {%include 'ess_app/common/commonjs.html'%}
+
+</body>
+</html>

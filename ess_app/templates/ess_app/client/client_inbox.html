@@ -1,0 +1,58 @@
+{%extends 'ess_app/vastu/vastu_base.html'%}
+{%block title%}
+Estate Essentials| Vastu inbox
+{%endblock%}
+
+
+{%block style%}
+body{background-color:violet}
+{%endblock%}
+
+{%block content%}
+<form action="/delete_message/" method="post">
+  {%csrf_token%}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Select</th>
+        <th scope="col">Sender Id</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Date</th>
+        <th scope="col">Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for m in message_object%}
+      <tr>
+        <th><input type="checkbox" name="checkid" value="{{m.id}}"></th>
+      <th scope="col">
+        {{m.sender_id}}
+      </th>
+
+      <th scope="col">
+        {{m.subject}} 
+      </th>
+
+      <th scope="col">
+        {{m.date}} 
+      </th>
+
+      <th scope="col">
+        {{m.content}} 
+      </th>
+    </tr>
+      {%endfor%}
+      
+      <tr>
+        <th colspan="5">
+          <div class="text-center">
+          <button class="btn btn-primary">Delete</button></div>
+        </th>
+      </tr>
+      
+    </tbody>
+    
+  </table>
+
+</form>
+{%endblock%}

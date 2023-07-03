@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {%include 'ess_app/common/commoncss.html'%}
+  <link rel="stylesheet" href="{%static 'ess_app/css/sidebar.css'%}">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body id="body-pd">
+  {%include 'ess_app/seller/seller_header.html'%}
+  <div class="col-md-5" style="margin-left: 350px;margin-top: 100px;margin-bottom: 100px;">
+    <h2>Userid is 🧑‍🎨{{seller_data.owner_id}}</h2>
+    <h2>Password is🔑 {{seller_data.password}}</h2>
+    <h2>Phone is {{seller_data.phone}}</h2>
+  <h2>Email is {{seller_data.email}}</h2>
+  <h2>City is {{seller_data.city}}</h2>
+
+  </div>
+  
+
+  {%include 'ess_app/common/commonjs.html'%}
+  {%include 'ess_app/common/footer1.html'%}
+
+  <script src="{%static 'ess_app/js/sidebar.js'%}"></script>
+
+</body>
+</html>
+

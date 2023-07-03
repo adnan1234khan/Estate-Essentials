@@ -1,0 +1,49 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {%include 'ess_app/common/commoncss.html'%}
+  <link rel="stylesheet" href="{%static 'ess_app/css/sidebar.css'%}">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body id="body-pd">
+  {%include 'ess_app/renter/renter_header.html'%}
+  <!-- message code start from here -->
+{%if messages%}
+{%for m in messages%}
+<!-- <h2>{{m}}</h2> -->
+<div class="text-center" style="margin-left: 25%;margin-top: 10px;">
+<div class="alert alert-{{m.tags}} alert-dismissible fade show w-50" role="alert">
+    <strong><i class="far fa-smile-beam"></i>{{m}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+{%endfor%}
+{%endif%}
+
+
+<!-- message code ends here -->
+  <div class="col-md-5" style="margin-left: 350px;margin-top: 100px;margin-bottom: 100px;font-size: xx-large;">
+  <div> Userid is {{renter_data.owner_id}}</div>
+  <div>Password is {{renter_data.password}}</div>
+  <div>Phone is {{renter_data.phone}}</div>
+  <div>Email is {{renter_data.email}}</div>
+  <div>City is {{renter_data.city}}</div>
+
+  
+
+  </div>
+  
+
+  {%include 'ess_app/common/commonjs.html'%}
+
+  <script src="{%static 'ess_app/js/sidebar.js'%}"></script>
+
+</body>
+</html>
+
